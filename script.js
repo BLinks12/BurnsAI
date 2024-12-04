@@ -6,14 +6,14 @@ function isValidUrl(string) {
     try {
         new URL(string);
         return true;
-    } catch (err) {
+    } catch (_) {
         return false;
     }
 }
 
-// Function to handle project submission
+// Function to submit a project
 function submitProject() {
-    const projectLink = document.getElementById('project-link').value;
+    const projectLink = document.getElementById('project-link').value.trim();
 
     if (!projectLink) {
         alert("Please enter a project link!");
@@ -35,7 +35,7 @@ function submitProject() {
         return;
     }
 
-    // Add project to the array with default votes
+    // Add project to the list with default votes
     projects.push({ link: projectLink, votes: 0 });
     document.getElementById('project-link').value = ''; // Clear input field
     renderProjects(); // Update the voting section
@@ -47,7 +47,7 @@ function vote(index) {
     renderProjects(); // Re-render the voting list
 }
 
-// Function to render projects dynamically
+// Function to render the project list
 function renderProjects() {
     const container = document.getElementById('voting-container');
     container.innerHTML = ''; // Clear the container
