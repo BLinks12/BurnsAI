@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurnsAI ($BURNS)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(to bottom, #87CEEB, #ffffff 70%);
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            background-color: #FFD90F;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            font-size: 1.2em;
+            color: #333333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #333333;
+            border-radius: 20px;
+            background-color: #FFFB8C;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #FFD90F;
+            transform: scale(1.1);
+        }
+
+        /* Header */
+        .header {
+            margin: 40px 0;
+        }
+
+        .title {
+            font-size: 4em;
+            color: #FFD90F;
+            text-shadow: 4px 4px 0px #000000;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333333;
+        }
+
+        .burns-image {
+            max-width: 300px;
+            margin: 20px auto;
+            border: 5px solid #333333;
+            border-radius: 50%;
+        }
+
+        /* Description */
+        .description {
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 1.5em;
+            color: #333333;
+            background-color: rgba(255, 217, 15, 0.8);
+            border: 3px solid #333333;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Feed Burns Section */
+        .feed-burns {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #FFD90F;
+            border: 3px dashed #000000;
+        }
+
+        .feed-burns h2 {
+            font-size: 2.5em;
+            color: #000000;
+            text-shadow: 2px 2px 0px #FFFFFF;
+        }
+
+        .feed-burns input {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px 0;
+            width: 70%;
+            border: 3px solid #333333;
+            border-radius: 10px;
+        }
+
+        .feed-burns button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            color: #FFFFFF;
+            background-color: #333333;
+            border: 3px solid #FFD90F;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .feed-burns button:hover {
+            background-color: #FFD90F;
+            transform: scale(1.1);
+        }
+
+        /* Voting Section */
+        .voting-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #FFFB8C;
+            border: 3px solid #FFD90F;
+            border-radius: 15px;
+        }
+
+        .voting-section h2 {
+            font-size: 2.5em;
+            color: #000000;
+        }
+
+        .vote-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFD90F;
+            padding: 15px;
+            margin: 15px auto;
+            width: 80%;
+            border: 3px solid #333333;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+
+        .vote-item button {
+            background-color: #333333;
+            color: #FFD90F;
+            border: 2px solid #FFD90F;
+            border-radius: 10px;
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .vote-item button:hover {
+            background-color: #FFD90F;
+            color: #333333;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FFD90F;
+            color: #333333;
+            padding: 20px 0;
+            font-size: 1em;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="https://x.com/SolanaAIBurns" target="_blank">Twitter</a>
+        <a href="https://t.me/+SolanaBurnsAI" target="_blank">Telegram</a>
+    </nav>
+
+    <header class="header">
+        <h1 class="title">$BURNS</h1>
+        <p class="subtitle">“Excellent Memecoin AI Agent”</p>
+        <img class="burns-image" src="YOUR_IMAGE_URL" alt="BurnsAI Logo">
+    </header>
+
+    <div class="description">
+        BurnsAI combines ruthless wit with cutting-edge AI to analyze, praise, or roast crypto projects. Only the “Excellent” survive!
+    </div>
+
+    <section class="feed-burns">
+        <h2>Feed the AI</h2>
+        <input type="text" id="project-link" placeholder="Submit a project link here...">
+        <button onclick="submitProject()">Submit</button>
+    </section>
+
+    <section class="voting-section">
+        <h2>Vote for the Next Gem or FUD</h2>
+        <div id="voting-container"></div>
+    </section>
+
+    <footer>
+        © 2024 BurnsAI | Memecoin Excellence. Powered by sarcasm and AI.
+    </footer>
+</body>
+</html>
